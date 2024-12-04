@@ -17,14 +17,13 @@ function showNotification(message) {
   }, 3000);
 }
 
-
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const name = nameInput.value.trim();
 
   if (!validateName(name)) {
-    showNotification("Please enter a valid name up to 36 characters).");
+    showNotification("Please enter a valid name up to 36 characters.");
     return;
   }
 
@@ -38,7 +37,6 @@ form.addEventListener("submit", (e) => {
       asciiOutput.textContent = `\n\n${TERMINAL_USERNAME} '${sanitizeInput(name)}' \n${asciiTree}`;
       asciiOutput.style.textAlign = "left";
       outputBox.style.display = "block";
-
       createAsciiImage(asciiTree, sanitizeInput(name));
     } catch (error) {
       showNotification("An unexpected error occurred while generating the greeting.");
