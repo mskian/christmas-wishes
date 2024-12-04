@@ -114,7 +114,8 @@ function createAsciiImage(asciiTree, name) {
 downloadBtn.addEventListener("click", () => {
   try {
     const link = document.createElement("a");
-    link.download = "christmas_greeting.png";
+    const timestamp = new Date().getTime();
+    link.download = `christmas-greeting-${timestamp}.png`;
     link.href = canvas.toDataURL();
     link.click();
   } catch (error) {
