@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" sizes="196x196" href="icon/icon-192.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="icon/favicon.ico" />
+
+  <title>Christmas Greeting Wishes in Linux Terminal Style</title>
+  <meta name="description" content="Christmas Greetings: Linux Terminal Style Greeting Wishes with Name."/>
+  
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <style>
+    html, body {
+        min-height: 100vh;
+    }
+    body {
+      background: #A02334;
+      font-family: "Ubuntu Mono", serif;
+      padding-bottom: 20px;
+    }
+    .terminal-box {
+      border: 2px solid #750E21;
+      padding: 1.5rem;
+      border-radius: 5px;
+      margin-top: 2rem;
+      background-color: #CA7373;
+      box-shadow: 0 0 15px #43766C;
+    }
+    .output-terminal {
+      background: #1e1e1e;
+      border-radius: 5px;
+      padding: 1rem;
+      font-size: 16px;
+      line-height: 1.6;
+      font-family: "Ubuntu Mono", serif;
+      overflow: auto;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    }
+    .button {
+      background: #81A263;
+      border: none;
+      color: white;
+      font-weight: bold;
+      font-family: "Ubuntu Mono", serif;
+    }
+    .button:hover {
+      background: #81A263;
+      box-shadow: 0 0 8px #81A263;
+      color: #eaffea;
+    }
+    .spinner {
+      border: 4px solid transparent;
+      border-top: 4px solid #FFD23F;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      animation: spin 0.8s linear infinite;
+      margin: 1rem auto;
+      display: none;
+    }
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    h1 {
+      color: #FFEEAD;
+      text-shadow: 0 0 5px #FFEEAD;
+      font-family: "Ubuntu Mono", serif;
+      text-align: center;
+    }
+    .input {
+      border: 1px solid #FCFAEE;
+      background: #FCFAEE;
+      color: #0C1844;
+      font-family: "Ubuntu Mono", serif;
+    }
+    .input:focus {
+      border-color: #0C1844;
+      box-shadow: 0 0 8px #0C1844;
+    }
+    pre {
+      font-family: "Ubuntu Mono", serif;
+      font-size:14px;
+      color: #fdcb6e;
+      text-shadow: 0 0 3px #fdcb6e;
+      background:  #2c001e;
+      line-height: 1.5em;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased !important;
+      -moz-font-smoothing: antialiased !important;
+       text-rendering: optimizelegibility !important;
+    }
+    pre code {
+      padding: 0;
+      font-size: inherit;
+      line-height: inherit;
+      color: inherit;
+    }
+    .notification {
+     font-family: "Ubuntu Mono", serif;
+      font-weight: 700;
+      margin-top: 20px;
+      border-radius: 10px;
+      padding: 10px 15px;
+    }
+    .notification.is-info {
+      background-color: #128C7E;
+      color: #fff;
+    }
+    .notification.is-danger {
+      background-color: #FF3D71;
+      color: #fff;
+    }
+    .notification {
+        display: none;
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 999;
+        background-color: #353b48;
+        color: white;
+        border-radius: 8px;  
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-family: "Ubuntu Mono", serif;
+        font-weight: 500;
+        width: 250px;  
+        align-items: center;
+        gap: 1rem;  
+    }
+    .notification.is-active {
+        display: block;
+    }
+    .notification .delete {
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-6">
+          <h1 class="is-size-5">🎄 Christmas Greetings 🎅</h1>
+          <div class="terminal-box">
+            <form id="greetingForm">
+              <label for="name" class="label">Enter your name:</label>
+              <div class="field">
+                <div class="control">
+                  <input id="name" class="input" type="text" placeholder="Your name" maxlength="36" />
+                </div>
+              </div>
+              <button type="submit" class="button is-fullwidth mt-2">Generate Greeting</button>
+            </form>
+          </div>
+
+          <div class="spinner" id="loadingSpinner"></div>
+
+          <div class="terminal-box" id="outputBox" style="display: none;">
+            <pre id="asciiOutput"></pre>
+            <br>
+            <button id="downloadBtn" class="button is-fullwidth mt-2">Download Greeting</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <canvas id="asciiCanvas" style="display: none;"></canvas>
+  <div id="notification" class="notification">
+    <p></p>
+    <button class="delete" aria-label="Close"></button>
+  </div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
