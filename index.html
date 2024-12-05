@@ -157,6 +157,14 @@
         font-size: 1.25rem;
     }
   </style>
+
+  <script>
+    const canonicalLink = document.createElement('link');
+    canonicalLink.setAttribute('rel', 'canonical');
+    canonicalLink.setAttribute('href', window.location.href);
+    document.head.appendChild(canonicalLink);
+  </script>
+
 </head>
 <body>
   <section class="section">
@@ -176,7 +184,10 @@
             </form>
           </div>
 
-          <div class="spinner" id="loadingSpinner"></div>
+          <div class="progress-bar-container" style="display: none; text-align: center; margin-top: 50px;">
+            <progress id="loadingProgressBar" class="progress is-success" max="100"></progress>
+            <p id="progressPercentage" style="margin-top: 10px; font-size: 1.2em; font-weight: bold; color: #ffffff;"></p>
+          </div>          
 
           <div class="terminal-box" id="outputBox" style="display: none;">
             <h3>🎄 Greeting Preview 🎅</h3>

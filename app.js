@@ -4,7 +4,8 @@ const asciiOutput = document.getElementById("asciiOutput");
 const outputBox = document.getElementById("outputBox");
 const downloadBtn = document.getElementById("downloadBtn");
 const canvas = document.getElementById("asciiCanvas");
-const loadingSpinner = document.getElementById("loadingSpinner");
+const progressBarContainer = document.querySelector(".progress-bar-container");
+const progressBar = document.getElementById("loadingProgressBar");
 
 const TERMINAL_USERNAME = `merry@christmas:~$ npx christmas`;
 
@@ -27,24 +28,34 @@ form.addEventListener("submit", (e) => {
     return;
   }
 
-  loadingSpinner.style.display = "block";
+  progressBarContainer.style.display = "block";
+  progressBar.value = 0;
+  progressPercentage.textContent = "0%";
   outputBox.style.display = "none";
 
+  let progress = 0;
+  const interval = setInterval(() => {
+    progress += 5;
+    progressBar.value = progress;
+    progressPercentage.textContent = `Generating: ${progress}%`;
 
-  setTimeout(() => {
-    try {
-      const asciiTree = generateAsciiTree(sanitizeInput(name));
-      asciiOutput.textContent = `\n\n${TERMINAL_USERNAME} '${sanitizeInput(name)}' \n${asciiTree}`;
-      asciiOutput.style.textAlign = "left";
-      outputBox.style.display = "block";
-      createAsciiImage(asciiTree, sanitizeInput(name));
-    } catch (error) {
-      showNotification("An unexpected error occurred while generating the greeting.");
-      console.error(error);
-    } finally {
-      loadingSpinner.style.display = "none";
+    if (progress >= 105) {
+      clearInterval(interval);
+      try {
+        const asciiTree = generateAsciiTree(sanitizeInput(name));
+        asciiOutput.textContent = `\n\n${TERMINAL_USERNAME} '${sanitizeInput(name)}' \n${asciiTree}`;
+        asciiOutput.style.textAlign = "left";
+        outputBox.style.display = "block";
+        createAsciiImage(asciiTree, sanitizeInput(name));
+      } catch (error) {
+        showNotification("An unexpected error occurred while generating the greeting.");
+        console.error(error);
+      } finally {
+        progressBarContainer.style.display = "none";
+        nameInput.value = '';
+      }
     }
-  }, 1500);
+  }, 350);
 });
 
 function validateName(name) {
