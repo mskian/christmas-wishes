@@ -4,7 +4,8 @@
 
 Christmas Greetings: Linux Terminal Style Greeting Wishes with Name.
 
-> create : **https://mskian.github.io/christmas-wishes/**
+- **Create Christmas Greeting Wish image with image : <https://mskian.github.io/christmas-wishes/>**  
+- **Christmas Wishing Songs: <https://mskian.github.io/christmas-wishes/music>**  
 
 ## LICENSE
 

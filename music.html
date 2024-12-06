@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" sizes="196x196" href="icon/icon-192.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="icon/favicon.ico" />
+
+  <title>Christmas Greeting Wishes: Festive Holiday Music & Downloadable Tracks</title>
+  <meta name="description" content="Celebrate the holiday season with Christmas greeting wishes. Enjoy festive holiday songs, play your favorite tracks, and download them to spread joy and cheer this Christmas."/>
+  
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <style>
+     html, body {
+        min-height: 100vh;
+    }
+    body {
+      background: #A02334;
+      font-family: "Ubuntu Mono", serif;
+      padding-bottom: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    .terminal-audio-player {
+      background-color: #222831;
+      font-family: "Ubuntu Mono", serif;
+      color: #00ff88;
+      border: 2px solid #00ff88;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 500px;
+      margin: 20px auto;
+      box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
+    }
+    .terminal-audio-player .title {
+      color: #00ff88;
+      font-family: "Ubuntu Mono", serif;
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 10px;
+      text-shadow: 0 0 5px #00ff88;
+    }
+    .audio-controls {
+      display: flex;
+      font-family: "Ubuntu Mono", serif;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+    .audio-controls button,
+    .audio-controls a {
+      background-color: #262626;
+      color: #00ff88;
+      border: 1px solid #00ff88;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-family: "Ubuntu Mono", serif;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .audio-controls button:hover,
+    .audio-controls a:hover {
+      background-color: #00ff88;
+      color: #1a1a1a;
+    }
+    .audio-controls .progress-bar {
+      flex: 1;
+      margin: 0 15px;
+      height: 8px;
+      background-color: #262626;
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+    }
+    .audio-controls .progress-bar .progress {
+      height: 100%;
+      background-color: #00ff88;
+      width: 0%;
+      border-radius: 5px;
+    }
+    .audio-controls .time {
+      font-size: 14px;
+    }
+    .audio-selector {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .audio-selector select {
+      background-color: #262626;
+      color: #00ff88;
+      border: 1px solid #00ff88;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    button {
+        font-family: "Ubuntu Mono", serif;
+    }
+    .button {
+        font-family: "Ubuntu Mono", serif;
+    }
+    input {
+        font-family: "Ubuntu Mono", serif;
+    }
+    select {
+        font-family: "Ubuntu Mono", serif;
+    }
+    .notification {
+     font-family: "Ubuntu Mono", serif;
+      font-weight: 700;
+      margin-top: 20px;
+      border-radius: 10px;
+      padding: 10px 15px;
+    }
+    .notification.is-info {
+      background-color: #128C7E;
+      color: #fff;
+    }
+    .notification.is-danger {
+      background-color: #FF3D71;
+      color: #fff;
+    }
+    .notification {
+        display: none;
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 999;
+        background-color: #353b48;
+        color: white;
+        border-radius: 8px;  
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-family: "Ubuntu Mono", serif;
+        font-weight: 500;
+        width: 250px;  
+        align-items: center;
+        gap: 1rem;  
+    }
+    .notification.is-active {
+        display: block;
+    }
+    .notification .delete {
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="terminal-audio-player">
+      <h1 class="title is-size-5">🎵 Player 🎄</h1>
+      <div class="audio-selector">
+        <label for="audioSelector">Select Track:</label>
+        <select id="audioSelector">
+          <option value="https://christmaswish.pages.dev/wish-one.mp3" selected>Track 1</option>
+          <option value="https://christmaswish.pages.dev/wish-two.mp3">Track 2</option>
+          <option value="https://christmaswish.pages.dev/wish-three.mp3">Track 3</option>
+          <option value="https://christmaswish.pages.dev/wish-four.mp3">Track 4</option>
+        </select>
+      </div>
+      <audio id="audio" src="https://christmaswish.pages.dev/wish-one.mp3"></audio>
+      <div class="audio-controls">
+        <button id="playPauseButton">▶️ Play</button>
+        <div class="progress-bar" id="progressBar">
+          <div class="progress" id="progress"></div>
+        </div>
+        <span class="time" id="currentTime">0:00</span>
+      </div>
+      <br>
+      <div class="content has-text-centered">
+        <a id="downloadButton" class="button is-warning is-small" href="https://christmaswish.pages.dev/wish-one.mp3" download="Christmas_Wish_Track.mp3"><b>⬇️ Download</b></a>
+      </div>
+    </div>
+  </section>
+  <div id="notification" class="notification">
+    <p></p>
+  </div>
+
+ <script>
+    const canonicalLink = document.createElement('link');
+    canonicalLink.setAttribute('rel', 'canonical');
+    canonicalLink.setAttribute('href', window.location.href);
+    document.head.appendChild(canonicalLink);
+
+    function showNotification(message) {
+      const notification = document.getElementById('notification');
+      notification.querySelector('p').textContent = message;
+      notification.classList.add('is-active');
+      setTimeout(() => {
+          notification.classList.remove('is-active');
+        }, 3000);
+      }
+
+    const audio = document.getElementById('audio');
+    const playPauseButton = document.getElementById('playPauseButton');
+    const progressBar = document.getElementById('progressBar');
+    const progress = document.getElementById('progress');
+    const currentTime = document.getElementById('currentTime');
+    const audioSelector = document.getElementById('audioSelector');
+    const downloadButton = document.getElementById('downloadButton');
+
+    function formatTime(seconds) {
+      const minutes = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60).toString().padStart(2, '0');
+      return `${minutes}:${secs}`;
+    }
+
+    playPauseButton.addEventListener('click', () => {
+      if (!audio.src) {
+        showNotification('Please select a track!');
+        return;
+      }
+      if (audio.paused) {
+        audio.play();
+        playPauseButton.textContent = '⏸ Pause';
+      } else {
+        audio.pause();
+        playPauseButton.textContent = '▶️ Play';
+      }
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      if (!audio.duration) return;
+      const currentTimeFormatted = formatTime(audio.currentTime);
+      currentTime.textContent = currentTimeFormatted;
+
+      const progressWidth = (audio.currentTime / audio.duration) * 100;
+      progress.style.width = `${progressWidth}%`;
+    });
+
+    progressBar.addEventListener('click', (e) => {
+      if (!audio.duration) return;
+      const clickX = e.offsetX;
+      const width = progressBar.offsetWidth;
+      const newTime = (clickX / width) * audio.duration;
+      audio.currentTime = newTime;
+    });
+
+    audioSelector.addEventListener('change', (e) => {
+      const selectedTrack = e.target.value;
+      audio.src = selectedTrack;
+      audio.pause();
+      audio.currentTime = 0;
+      progress.style.width = '0%';
+      currentTime.textContent = '0:00';
+      playPauseButton.textContent = '▶️ Play';
+      downloadButton.href = selectedTrack;
+      audio.play();
+      playPauseButton.textContent = '⏸ Pause';
+    });
+
+    audio.addEventListener('ended', () => {
+      const currentIndex = audioSelector.selectedIndex;
+      const nextIndex = (currentIndex + 1) % audioSelector.options.length;
+      audioSelector.selectedIndex = nextIndex;
+      const nextTrack = audioSelector.value;
+      audio.src = nextTrack;
+      audio.play();
+      playPauseButton.textContent = '⏸ Pause';
+      downloadButton.href = nextTrack;
+    });
+
+    audio.addEventListener('error', () => {
+       showNotification('Error loading audio. Please check the track and try again.');
+    });
+
+    downloadButton.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const audioUrl = downloadButton.href;
+     try {
+        const response = await fetch(audioUrl);
+        if (!response.ok) throw new Error('Failed to fetch audio file');
+            const audioBlob = await response.blob();
+            const audioUrlObject = URL.createObjectURL(audioBlob);
+            const tempLink = document.createElement('a');
+            tempLink.href = audioUrlObject;
+            tempLink.download = audioUrl.split('/').pop();
+            document.body.appendChild(tempLink);
+            tempLink.click();
+            document.body.removeChild(tempLink);
+            URL.revokeObjectURL(audioUrlObject);
+        } catch (error) {
+           showNotification('Error downloading audio');
+           console.error('Error downloading audio:', error);
+        }
+    });
+
+</script>
+
+</body>
+</html>
