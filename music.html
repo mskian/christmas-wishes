@@ -44,8 +44,7 @@
       font-family: "Ubuntu Mono", serif;
       font-size: 1.8rem;
       text-align: center;
-      margin-bottom: 10px;
-      text-shadow: 0 0 5px #00ff88;
+      margin-bottom: 50px;
     }
     .audio-controls {
       display: flex;
@@ -158,7 +157,25 @@
         color: white;
         font-size: 1.25rem;
     }
+    .downloadButton > a {
+      background-color: #262626;
+      color: #00ff88;
+      border: 1px solid #00ff88;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-family: "Ubuntu Mono", serif;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .downloadButton > a:hover {
+      background-color: #00ff88;
+      color: #1a1a1a;
+    }
   </style>
+
+  <link rel="preconnect" href="https://christmaswish.pages.dev">
 
   <script>
     const canonicalLink = document.createElement('link');
@@ -172,7 +189,7 @@
 
   <section class="section">
     <div class="terminal-audio-player">
-      <h1 class="title is-size-6">🎵 Player 🎄</h1><br>
+      <h1 class="title is-size-6">🎵 Player 🎄</h1>
       <div class="audio-selector">
         <label for="audioSelector">Select Track:</label>
         <select id="audioSelector"></select>
@@ -186,8 +203,8 @@
         <span class="time" id="currentTime">0:00</span>
       </div>
       <br>
-      <div class="content has-text-centered">
-        <a id="downloadButton" class="button is-warning is-small is-rounded" href="https://christmaswish.pages.dev/wish-one.mp3" download="Christmas_Wish_Track.mp3"><b>⬇️ Download</b></a>
+      <div class="has-text-centered downloadButton mt-5">
+        <a id="downloadButton" href="https://christmaswish.pages.dev/wish-one.mp3" download="Christmas_Wish_Track.mp3"><b>⬇️ Download</b></a>
       </div>
       <br>
       <hr>
