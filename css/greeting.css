@@ -25,6 +25,8 @@ body {
   }
   .input {
     font-family: "Catamaran", sans-serif;
+    border: 1px solid #ff3860;
+    font-weight: 700;
   }
   .button {
     font-family: "Catamaran", sans-serif;
@@ -37,4 +39,12 @@ body {
   }
   p {
     font-family: "Catamaran", sans-serif;
+    text-shadow: 0 0 4px #A02334;
+  }
+  .title {
+    color: #A02334;
+    text-shadow: 0 0 5px #A02334;
+    font-family: "Catamaran", sans-serif;
+    font-size: 1.1rem;
+    text-align: center;
   }

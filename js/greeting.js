@@ -33,14 +33,21 @@ document.addEventListener('DOMContentLoaded', () => {
           const ctx = canvas.getContext('2d');
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
   
-          // ctx.fillStyle = '#d35585'; // Dark pink
+          // ctx.fillStyle = '#d35585';
           ctx.font = 'bold 36px "Catamaran", sans-serif';
           ctx.textAlign = 'center';
           // ctx.fillText('🎄 Merry Christmas 🎄', canvas.width / 2, 90);
+          const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+          gradient.addColorStop(0.5, '#badc58');
+          gradient.addColorStop(0.1, '#44bd32');
+          gradient.addColorStop(1, '#44bd32');
   
-          ctx.fillStyle = '#130f40'; // Brown
-          ctx.font = 'bold 30px "Catamaran", sans-serif';
-          ctx.fillText(`${name}`, canvas.width / 2, canvas.height - 60);
+          ctx.fillStyle = gradient;
+          ctx.font = 'bold 38px "Catamaran", sans-serif';
+          ctx.shadowColor = '#27ae60';
+          ctx.shadowBlur = 3;
+          const footerYPosition = canvas.height - 60;
+          ctx.fillText(`🌟 ${name} 🎅`, canvas.width / 2, footerYPosition);
   
           resolve(canvas.toDataURL('image/png'));
         };
@@ -76,10 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
         validateInput(name);
   
         await terminalProcess([
-          'ℹ️ Validating input ...',
+          'ℹ️ Validating input...',
           '✅ Input validation successful',
-          '🥤 Loading resources ...',
-          'ℹ️ Preparing your greeting ...',
+          '🥤 Loading resources...',
+          'ℹ️ Preparing your greeting...',
         ]);
 
         nameInput.value = '';
