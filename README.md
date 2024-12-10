@@ -10,8 +10,8 @@ Christmas Greetings: Linux Terminal Style Greeting Wishes with Name - Christmas 
 
 ## 🎄 Christmas Greetings 🎅
 
-➡️ Christmas Greeting Wishes in Linux Terminal Style: **<https://christmas.sanweb.info/>**
-➡️ Christmas Wishing Songs: **<https://christmas.sanweb.info/music>**
+➡️ Christmas Greeting Wishes in Linux Terminal Style: **<https://christmas.sanweb.info/>**  
+➡️ Christmas Wishing Songs: **<https://christmas.sanweb.info/music>**  
 ➡️ Christmas Greeting image with Name: **<https://christmas.sanweb.info/greeting>**  
 
 ## Credits
