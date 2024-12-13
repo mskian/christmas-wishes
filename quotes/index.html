@@ -13,20 +13,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script type="module" crossorigin src="/assets/index-B7syL3HE.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CcjkOHh2.css">
+  <script type="module" crossorigin src="/assets/index-YRtd04Hr.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CwGa1yap.css">
 </head>
 <body>
   <section class="section">
-    <div class="container content">
-      <h1 class="title has-text-centered is-size-5">🎄 Christmas Quotes 🎄</h1>
+    <div class="container">
+      <h1 class="title has-text-centered is-size-5">🎄 Christmas Quotes 🎅</h1>
+      <div id="loading-spinner" class="spinner is-hidden">
+        <div class="spinner-border"></div>
+      </div>
       <br>
       <div id="quotes-container" class="columns is-multiline is-centered"></div>
       <div id="pagination" class="pagination-container">
         <button id="prev-btn" class="button is-link is-small">Previous</button>
         <button id="next-btn" class="button is-link is-small">Next</button>
       </div>
-      <div class="toggle-container mt-6">
+      <div class="toggle-container mt-6" id="toggle-hide">
         <label class="toggle-switch">
           <input type="checkbox" id="dark-mode-toggle">
           <span class="slider"></span>
