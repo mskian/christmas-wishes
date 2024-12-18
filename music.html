@@ -12,168 +12,11 @@
   <meta name="description" content="Celebrate the holiday season with Christmas greeting wishes. Enjoy festive holiday songs, play your favorite tracks, and download them to spread joy and cheer this Christmas."/>
   
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.2/css/bulma.min.css" integrity="sha512-RpeJZX3aH5oZN3U3JhE7Sd+HG8XQsqmP3clIbu4G28p668yNsRNj3zMASKe1ATjl/W80wuEtCx2dFA8xaebG5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
-  <style>
-     html, body {
-        min-height: 100vh;
-    }
-    body {
-      background: #A02334;
-      font-family: "Ubuntu Mono", serif;
-      padding-bottom: 20px;
-      margin: 0;
-      padding: 0;
-    }
-    .terminal-audio-player {
-      background-color: #222831;
-      font-family: "Ubuntu Mono", serif;
-      color: #00ff88;
-      border: 2px solid #00ff88;
-      border-radius: 10px;
-      padding: 20px;
-      max-width: 500px;
-      margin: 20px auto;
-      box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
-    }
-    .terminal-audio-player .title {
-      color: #00ff88;
-      font-family: "Ubuntu Mono", serif;
-      font-size: 1.8rem;
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    .audio-controls {
-      display: flex;
-      font-family: "Ubuntu Mono", serif;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 15px;
-    }
-    .audio-controls button,
-    .audio-controls a {
-      background-color: #262626;
-      color: #00ff88;
-      border: 1px solid #00ff88;
-      border-radius: 5px;
-      padding: 10px 15px;
-      cursor: pointer;
-      font-family: "Ubuntu Mono", serif;
-      font-size: 14px;
-      transition: all 0.3s ease;
-      text-decoration: none;
-    }
-    .audio-controls button:hover,
-    .audio-controls a:hover {
-      background-color: #00ff88;
-      color: #1a1a1a;
-    }
-    .audio-controls .progress-bar {
-      flex: 1;
-      margin: 0 15px;
-      height: 8px;
-      background-color: #cf9191;
-      border-radius: 5px;
-      position: relative;
-      overflow: hidden;
-    }
-    .audio-controls .progress-bar .progress {
-      height: 100%;
-      background-color: #05522e;
-      width: 0%;
-      border-radius: 5px;
-    }
-    .audio-controls .time {
-      font-size: 14px;
-    }
-    .audio-selector {
-      margin-top: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .audio-selector select {
-      background-color: #262626;
-      color: #00ff88;
-      border: 1px solid #00ff88;
-      border-radius: 5px;
-      padding: 5px 10px;
-      cursor: pointer;
-    }
-    button {
-        font-family: "Ubuntu Mono", serif;
-    }
-    .button {
-        font-family: "Ubuntu Mono", serif;
-    }
-    input {
-        font-family: "Ubuntu Mono", serif;
-    }
-    select {
-        font-family: "Ubuntu Mono", serif;
-    }
-    .notification {
-     font-family: "Ubuntu Mono", serif;
-      font-weight: 700;
-      margin-top: 20px;
-      border-radius: 10px;
-      padding: 10px 15px;
-    }
-    .notification.is-info {
-      background-color: #128C7E;
-      color: #fff;
-    }
-    .notification.is-danger {
-      background-color: #FF3D71;
-      color: #fff;
-    }
-    .notification {
-        display: none;
-        position: fixed;
-        bottom: 1rem;
-        right: 1rem;
-        z-index: 999;
-        background-color: #353b48;
-        color: white;
-        border-radius: 8px;  
-        padding: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        font-family: "Ubuntu Mono", serif;
-        font-weight: 500;
-        width: 250px;  
-        align-items: center;
-        gap: 1rem;  
-    }
-    .notification.is-active {
-        display: block;
-    }
-    .notification .delete {
-        cursor: pointer;
-        background: transparent;
-        border: none;
-        color: white;
-        font-size: 1.25rem;
-    }
-    .downloadButton > a {
-      background-color: #262626;
-      color: #00ff88;
-      border: 1px solid #00ff88;
-      border-radius: 5px;
-      padding: 10px 15px;
-      cursor: pointer;
-      font-family: "Ubuntu Mono", serif;
-      font-size: 14px;
-      transition: all 0.3s ease;
-      text-decoration: none;
-    }
-    .downloadButton > a:hover {
-      background-color: #00ff88;
-      color: #1a1a1a;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/music.css">
 
   <link rel="preconnect" href="https://christmaswish.pages.dev">
 
@@ -207,7 +50,7 @@
         <a id="downloadButton" href="https://christmaswish.pages.dev/wish-one.mp3" download="Christmas_Wish_Track.mp3"><b>⬇️ Download</b></a>
       </div>
       <br>
-      <hr>
+      <hr style="border: 1px solid #92e78f;">
       <h1 class="is-size-6 has-text-centered">🎄 Merry Christmas 🎅</h1>
       <br>
       <p>

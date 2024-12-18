@@ -1,0 +1,160 @@
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Geist Mono", serif;
+    word-wrap: break-word;
+}
+body {
+  background: #A02334;
+  font-family: "Geist Mono", serif;
+  padding-bottom: 20px;
+  margin: 0;
+  padding: 0;
+}
+.terminal-audio-player {
+  background-color: #222831;
+  font-family: "Geist Mono", serif;
+  color: #00ff88;
+  border: 2px solid #00ff88;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
+}
+.terminal-audio-player .title {
+  color: #00ff88;
+  font-family: "Geist Mono", serif;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.audio-controls {
+  display: flex;
+  font-family: "Geist Mono", serif;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.audio-controls button,
+.audio-controls a {
+  background-color: #262626;
+  color: #00ff88;
+  border: 1px solid #00ff88;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-family: "Geist Mono", serif;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.audio-controls button:hover,
+.audio-controls a:hover {
+  background-color: #00ff88;
+  color: #1a1a1a;
+}
+.audio-controls .progress-bar {
+  flex: 1;
+  margin: 0 15px;
+  height: 8px;
+  background-color: #cf9191;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.audio-controls .progress-bar .progress {
+  height: 100%;
+  background-color: #05522e;
+  width: 0%;
+  border-radius: 5px;
+}
+.audio-controls .time {
+  font-size: 14px;
+}
+.audio-selector {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.audio-selector select {
+  background-color: #262626;
+  color: #00ff88;
+  border: 1px solid #00ff88;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+button {
+    font-family: "Geist Mono", serif;
+}
+.button {
+    font-family: "Geist Mono", serif;
+}
+input {
+    font-family: "Geist Mono", serif;
+}
+select {
+    font-family: "Geist Mono", serif;
+}
+.notification {
+  font-family: "Geist Mono", serif;
+  font-weight: 700;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+.notification.is-info {
+  background-color: #128C7E;
+  color: #fff;
+}
+.notification.is-danger {
+  background-color: #FF3D71;
+  color: #fff;
+}
+.notification {
+    display: none;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 999;
+    background-color: #353b48;
+    color: white;
+    border-radius: 8px;  
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: "Geist Mono", serif;
+    font-weight: 500;
+    width: 250px;  
+    align-items: center;
+    gap: 1rem;  
+}
+.notification.is-active {
+    display: block;
+}
+.notification .delete {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.25rem;
+}
+.downloadButton > a {
+  background-color: #262626;
+  color: #00ff88;
+  border: 1px solid #00ff88;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-family: "Geist Mono", serif;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.downloadButton > a:hover {
+  background-color: #00ff88;
+  color: #1a1a1a;
+}
