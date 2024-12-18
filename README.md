@@ -17,6 +17,8 @@ Christmas Greetings: Linux Terminal Style Greeting Wishes with Name - Christmas 
 
 ## Tools
 
+- Bulma CSS
+- HTML Canvas
 - A static site for sharing Christmas greeting quotes: **<https://github.com/sanwebinfo/christmas-quotes>**  
 
 ## Credits
