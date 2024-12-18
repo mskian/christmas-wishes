@@ -12,151 +12,11 @@
   <meta name="description" content="Christmas Greetings: Linux Terminal Style Greeting Wishes with Name."/>
   
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.2/css/bulma.min.css" integrity="sha512-RpeJZX3aH5oZN3U3JhE7Sd+HG8XQsqmP3clIbu4G28p668yNsRNj3zMASKe1ATjl/W80wuEtCx2dFA8xaebG5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  
-  <style>
-    html, body {
-        min-height: 100vh;
-    }
-    body {
-      background: #A02334;
-      font-family: "Ubuntu Mono", serif;
-      padding-bottom: 20px;
-    }
-    .terminal-box {
-      border: 2px solid #750E21;
-      padding: 1.5rem;
-      border-radius: 5px;
-      margin-top: 2rem;
-      background-color: #CA7373;
-      box-shadow: 0 0 15px #43766C;
-    }
-    .output-terminal {
-      background: #1e1e1e;
-      border-radius: 5px;
-      padding: 1rem;
-      font-size: 16px;
-      line-height: 1.6;
-      font-family: "Ubuntu Mono", serif;
-      overflow: auto;
-      box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-    }
-    .button {
-      background: #5f27cd;
-      border: none;
-      color: white;
-      font-weight: bold;
-      font-family: "Ubuntu Mono", serif;
-    }
-    .button:hover {
-      background: #5f27cd;
-      box-shadow: 0 0 8px #5f27cd;
-      color: #eaffea;
-    }
-    .spinner {
-      border: 5px solid transparent;
-      border-top: 6px solid #FFD23F;
-      border-radius: 50%;
-      width: 35px;
-      height: 35px;
-      animation: spin 0.8s linear infinite;
-      margin: 2rem auto;
-      display: none;
-    }
-    @keyframes spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-    h1 {
-      color: #FFEEAD;
-      text-shadow: 0 0 5px #FFEEAD;
-      font-family: "Ubuntu Mono", serif;
-      text-align: center;
-    }
-    h3 {
-      color: #20201e;
-      text-shadow: 0 0 5px #8f8e8d;
-      font-family: "Ubuntu Mono", serif;
-      text-align: center;
-    }
-    .input {
-      border: 1px solid #FCFAEE;
-      background: #FCFAEE;
-      color: #0C1844;
-      font-family: "Ubuntu Mono", serif;
-    }
-    .input:focus {
-      border-color: #0C1844;
-      box-shadow: 0 0 8px #0C1844;
-    }
-    pre {
-      font-family: "Ubuntu Mono", serif;
-      font-size:14px;
-      color: #fdcb6e;
-      text-shadow: 0 0 3px #fdcb6e;
-      background:  #2c001e;
-      line-height: 1.5em;
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-font-smoothing: antialiased !important;
-      -moz-font-smoothing: antialiased !important;
-       text-rendering: optimizelegibility !important;
-    }
-    pre code {
-      padding: 0;
-      font-size: inherit;
-      line-height: inherit;
-      color: inherit;
-    }
-    .notification {
-     font-family: "Ubuntu Mono", serif;
-      font-weight: 700;
-      margin-top: 20px;
-      border-radius: 10px;
-      padding: 10px 15px;
-    }
-    .notification.is-info {
-      background-color: #128C7E;
-      color: #fff;
-    }
-    .notification.is-danger {
-      background-color: #FF3D71;
-      color: #fff;
-    }
-    .notification {
-        display: none;
-        position: fixed;
-        bottom: 1rem;
-        right: 1rem;
-        z-index: 999;
-        background-color: #353b48;
-        color: white;
-        border-radius: 8px;  
-        padding: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        font-family: "Ubuntu Mono", serif;
-        font-weight: 500;
-        width: 250px;  
-        align-items: center;
-        gap: 1rem;  
-    }
-    .notification.is-active {
-        display: block;
-    }
-    .notification .delete {
-        cursor: pointer;
-        background: transparent;
-        border: none;
-        color: white;
-        font-size: 1.25rem;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
 
   <script>
     const canonicalLink = document.createElement('link');
@@ -172,15 +32,21 @@
       <div class="columns is-centered">
         <div class="column is-6">
           <h1 class="is-size-5">🎄 Christmas Greetings 🎅</h1>
+          <div class="toggle-container has-text-centered mt-5">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider"></span>
+            </label>
+          </div>
           <div class="terminal-box">
             <form id="greetingForm">
-              <label for="name" class="label">Enter your name:</label>
+              <label for="name" class="label text-all mb-4 has-text-centered">Enter your name</label>
               <div class="field">
                 <div class="control">
-                  <input id="name" class="input" type="text" placeholder="Your name" maxlength="36" />
+                  <input id="name" class="input is-warning" type="text" placeholder="Your name" maxlength="36" />
                 </div>
               </div>
-              <button type="submit" class="button is-fullwidth mt-2">Generate Greeting</button>
+              <button type="submit" class="button is-success is-fullwidth mt-2">Generate Greeting</button>
             </form>
           </div>
 
@@ -190,11 +56,11 @@
           </div>          
 
           <div class="terminal-box" id="outputBox" style="display: none;">
-            <h3>🎄 Greeting Preview 🎅</h3>
+            <h3 class="text-all">🎄 Greeting Preview 🎅</h3>
             <br>
             <pre id="asciiOutput"></pre>
             <br>
-            <button id="downloadBtn" class="button is-fullwidth mt-2">Download Greeting</button>
+            <button id="downloadBtn" class="button is-success is-fullwidth mt-2">Download Greeting</button>
           </div>
         </div>
       </div>
