@@ -1,50 +1,47 @@
 html, body {
     min-height: 100vh;
-    font-family: "Catamaran", sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Anek Tamil", serif;
+    word-wrap: break-word;
 }
 body {
-    background: #A02334;
+    background-color:#442241;
     color: #f0dd71;
-    font-family: "Catamaran", sans-serif;
-    font-weight: 600;
+    font-family: "Anek Tamil", serif;
+    font-weight: 500;
     padding-bottom: 20px;
   }
-  
   .terminal {
-    background-color: #1e272e;
+    background-color: #272b4b;
+    box-shadow: 0 0 5px #0681e6;
     padding: 20px;
-    font-family: "Catamaran", sans-serif;
+    font-family: "Anek Tamil", serif;
     border-radius: 8px;
-    box-shadow: 0 0 10px #bdf399;
-  }
-  
-  input:focus, button:focus {
-    outline: none;
-    border-color: #ff3860;
-    box-shadow: 0 0 0 0.125em rgba(255, 56, 96, 0.25);
   }
   .input {
-    font-family: "Catamaran", sans-serif;
+    font-family: "Anek Tamil", serif;
     border: 1px solid #ff3860;
-    font-weight: 700;
+    font-weight: 600;
   }
   .button {
-    font-family: "Catamaran", sans-serif;
-    font-weight: bold;
+    font-family: "Anek Tamil", serif;
+    font-weight: 600;
   }
   #generatedImage {
-    font-family: "Catamaran", sans-serif;;
+    font-family: "Anek Tamil", serif;
     border: 2px solid #ff3860;
     border-radius: 8px;
   }
   p {
-    font-family: "Catamaran", sans-serif;
-    text-shadow: 0 0 4px #A02334;
+    font-family: "Anek Tamil", serif;
+    text-shadow: 0 0 2px #A02334;
   }
   .title {
-    color: #A02334;
-    text-shadow: 0 0 5px #A02334;
-    font-family: "Catamaran", sans-serif;
+    text-shadow: 0 0 2px #A02334;
+    font-family: "Anek Tamil", serif;
     font-size: 1.1rem;
+    font-weight: 600;
     text-align: center;
   }

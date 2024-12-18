@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
   
           // ctx.fillStyle = '#d35585';
-          ctx.font = 'bold 36px "Catamaran", sans-serif';
+          ctx.font = '600 35px "Anek Tamil", sans-serif';
           ctx.textAlign = 'center';
           // ctx.fillText('🎄 Merry Christmas 🎄', canvas.width / 2, 90);
           const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
           gradient.addColorStop(1, '#44bd32');
   
           ctx.fillStyle = gradient;
-          ctx.font = 'bold 38px "Catamaran", sans-serif';
+          ctx.font = 'bold 38px "Anek Tamil", sans-serif';
           ctx.shadowColor = '#27ae60';
           ctx.shadowBlur = 3;
           const footerYPosition = canvas.height - 60;
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     const terminalProcess = async (steps) => {
       for (const step of steps) {
-        output.innerHTML += `<p class="has-text-danger" style="font-family: 'Catamaran', sans-serif;">${step}</p>`;
+        output.innerHTML += `<p class="has-text-danger" style="font-family: 'Anek Tamil', sans-serif;">${step}</p>`;
         await new Promise((resolve) => setTimeout(resolve, 1000));
       }
     };
@@ -101,9 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
         downloadImage.download = `christmas-greeting-${timestamp}.png`;
         greetingImage.classList.remove('is-hidden');
   
-        output.innerHTML += `<p class="has-text-danger" style="font-family: 'Catamaran', sans-serif;">🎉 Greeting generated successfully</p>`;
+        output.innerHTML += `<p class="has-text-danger" style="font-family: 'Anek Tamil', sans-serif;">🎉 Greeting generated successfully</p>`;
       } catch (err) {
-        output.innerHTML += `<p class="has-text-danger" style="font-family: 'Catamaran', sans-serif;">🔴 ${err.message}</p>`;
+        output.innerHTML += `<p class="has-text-danger" style="font-family: 'Anek Tamil', sans-serif;">🔴 ${err.message}</p>`;
       }
     });
   });
